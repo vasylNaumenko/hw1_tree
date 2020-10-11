@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+// one possible solution for triplets count problem,
+// more info https://www.hackerrank.com/challenges/count-triplets-1/problem
 type Triplet interface {
 	AddValue(value int64)
 	Count() int64
