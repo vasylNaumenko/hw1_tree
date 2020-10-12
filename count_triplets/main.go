@@ -205,7 +205,7 @@ func countTriplets(arr []int64, r int64) int64 {
 		triplets.AddValue(val)
 	}
 
-	fmt.Println(triplets)
+	//fmt.Println(triplets)
 	return triplets.Count()
 }
 
@@ -219,18 +219,26 @@ func main() {
 		fmt.Printf("---\n\n")
 	}
 
-	arr = []int64{1, 2, 2, 4}
-	r = int64(2)
-	ans = countTriplets(arr, r)
-	log(arr, ans, 2)
+	// arr = []int64{1, 2, 2, 4}
+	// r = int64(2)
+	// ans = countTriplets(arr, r)
+	// log(arr, ans, 2)
+	//
+	// arr = []int64{1, 3, 9, 9, 27, 81}
+	// r = int64(3)
+	// ans = countTriplets(arr, r)
+	// log(arr, ans, 6)
+	//
+	// arr = []int64{1, 5, 5, 25, 125}
+	// r = int64(5)
+	// ans = countTriplets(arr, r)
+	// log(arr, ans, 4)
 
-	arr = []int64{1, 3, 9, 9, 27, 81}
-	r = int64(3)
+	arr = make([]int64, 100)
+	for i := range arr {
+		arr[i] = 1
+	}
+	r = int64(1)
 	ans = countTriplets(arr, r)
-	log(arr, ans, 6)
-
-	arr = []int64{1, 5, 5, 25, 125}
-	r = int64(5)
-	ans = countTriplets(arr, r)
-	log(arr, ans, 4)
+	log(arr, ans, 161700)
 }
