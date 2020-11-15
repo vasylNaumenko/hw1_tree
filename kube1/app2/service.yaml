@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-app2
+  namespace: default
+spec:
+  selector:
+    app: kube-app2
+  ports:
+  - port: 80
+    targetPort: 3002
+    protocol: TCP

@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-app2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kube-app2
+  template:
+    metadata:
+      labels:
+        app: kube-app2
+    spec:
+      containers:
+        - name: kube-app2
+          image: vnau/ks:app2-v1
+          ports:
+          - containerPort: 3002
+            protocol: TCP
