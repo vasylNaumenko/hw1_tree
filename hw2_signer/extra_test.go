@@ -30,13 +30,15 @@ func TestByIlia(t *testing.T) {
 		}),
 		job(func(in, out chan interface{}) {
 			for val := range in {
+				fmt.Println("collected", val)
 				out <- val.(uint32) * 3
 				time.Sleep(time.Millisecond * 100)
 			}
 		}),
 		job(func(in, out chan interface{}) {
+			fmt.Printf("in len %v\n", len(in))
 			for val := range in {
-				fmt.Println("collected", val)
+				fmt.Println("collected --", val)
 				atomic.AddUint32(&recieved, val.(uint32))
 			}
 		}),
