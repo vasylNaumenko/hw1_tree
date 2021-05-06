@@ -94,6 +94,7 @@ func main() {
 			displayHelloWorld(s, dx)
 		case *tcell.EventKey:
 			if ev.Key() == tcell.KeyEscape {
+				s.Clear()
 				s.Fini()
 				os.Exit(0)
 			}
